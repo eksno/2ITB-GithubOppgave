@@ -31,7 +31,7 @@ class User(Base):
     def __init__(self, email, username, admin=False) -> None:
         self.email = email
         self.username = username
-        self.registered_on = datetime.datetime.now()
+        self.registered_on = datetime.now()
         self.admin = admin
 
     def __repr__(self):
