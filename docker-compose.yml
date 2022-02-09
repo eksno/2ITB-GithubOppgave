@@ -1,0 +1,22 @@
+version: "3.9"
+
+networks:
+  front-tier:
+  back-tier:
+
+services:
+  app:
+    build: .
+    entrypoint: >
+      bash -c "./scripts/app-setup.sh"
+    volumes:
+      - .:/app
+    ports:
+      - "8080:8080"
+    depends_on:
+      - db
+    env_file:
+      - .env
+    networks:
+      - back-tier
+      - front-tier
