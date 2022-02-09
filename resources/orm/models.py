@@ -28,10 +28,9 @@ class User(Base):
     registered_on = sa.Column(sa.DateTime, nullable=False)
     admin = sa.Column(sa.Boolean, nullable=False, default=False)
 
-    def __init__(self, email, username, password, admin=False) -> None:
+    def __init__(self, email, username, admin=False) -> None:
         self.email = email
         self.username = username
-        self.password = password
         self.registered_on = datetime.datetime.now()
         self.admin = admin
 
