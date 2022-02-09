@@ -28,29 +28,15 @@ class User(Base):
     registered_on = sa.Column(sa.DateTime, nullable=False)
     admin = sa.Column(sa.Boolean, nullable=False, default=False)
 
-    def __init__(self, email, password, admin=False) -> None:
+    def __init__(self, email, username, password, admin=False) -> None:
         self.email = email
+        self.username = username
         self.password = password
         self.registered_on = datetime.datetime.now()
         self.admin = admin
 
     def __repr__(self):
         return "<User %r>" % self.email
-
-    def encode_auth_token(self, user_id):
-        """
-        Generates the Auth Token
-        :return: string
-        """
-        try:
-            payload = {
-                "exp": datetime.utcnow() + timedelta(days=0, seconds=5),
-                "iat": datetime.utcnow(),
-                "sub": user_id,
-            }
-            return jwt.encode(payload, app.config.get("SECRET_KEY"), algorithm="HS256")
-        except Exception as e:
-            return e
 
 
 class Password(Base):
