@@ -2,7 +2,7 @@
  Jonas, Steffen, Rasmus, Marius
 
 ## Setup
-1. Clone Repository
+1. Clone the repository https://github.com/Eksno/2ITB-GithubOppgave.git
 2. Download Docker Desktop https://docs.docker.com/desktop/windows/install/
 3. Open Docker Desktop
 4. Run `docker-compose_up.bat`
