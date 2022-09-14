@@ -1,5 +1,5 @@
 # 2ITB GithubOppgave
- Jonas, Steffen, Rasmus
+ Jonas
 
 ## Setup
 1. Clone the repository https://github.com/Eksno/2ITB-GithubOppgave.git
